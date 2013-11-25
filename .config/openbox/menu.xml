@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+  <menu id="root-menu" label="Openbox 3">
+    <item label="term"><action name="Execute"><execute>/usr/bin/gnome-terminal</execute></action></item>
+    <item label="thunar"><action name="Execute"><execute>/usr/bin/thunar</execute></action></item>
+    <item label="firefox"><action name="Execute"><execute>/usr/bin/firefox</execute></action></item>
+    <!-- This requires the presence of the 'menu' package to work -->
+    <separator/>
+    <menu id="net" label="net">
+      <item label="Claws-mail"><action name="Execute"><execute>/usr/bin/claws-mail</execute></action></item>
+      <item label="chromium"><action name="Execute"><execute>/usr/bin/chromium</execute></action></item>
+      <item label="empathy"><action name="Execute"><execute>/usr/bin/empathy</execute></action></item>
+      <item label="Pidgin"><action name="Execute"><execute>/usr/bin/pidgin</execute></action></item>
+      <item label="Wireshark"><action name="Execute"><execute>/usr/bin/gksudo /usr/bin/wireshark</execute></action></item>
+      <item label="Zenmap"><action name="Execute"><execute>/usr/bin/gksudo /usr/bin/zenmap</execute></action></item>
+      <item label="remmina"><action name="Execute"><execute>/usr/bin/remmina</execute></action></item>
+    </menu>
+    <menu id="text" label="text">
+      <item label="qvim"><action name="Execute"><execute>/usr/bin/qvim</execute></action></item>
+      <item label="emacs"><action name="Execute"><execute>/usr/bin/emacs</execute></action></item>
+      <item label="wxHexEditor"><action name="Execute"><execute>/usr/bin/wxHexEditor</execute></action></item>
+      <item label="calc"><action name="Execute"><execute>/usr/bin/libreoffice --calc</execute></action></item>
+      <item label="gnumeric"><action name="Execute"><execute>/usr/bin/gnumeric</execute></action></item>
+      <item label="keepassx"><action name="Execute"><execute>/usr/bin/keepassx</execute></action></item>
+      <item label="zim"><action name="Execute"><execute>/usr/bin/zim</execute></action></item>
+      <item label="lyx"><action name="Execute"><execute>/usr/bin/lyx</execute></action></item>
+    </menu>
+    <menu id="qt" label="qt">
+      <item label="Designer"><action name="Execute"><execute>/usr/bin/designer</execute></action></item>
+      <item label="Assistant"><action name="Execute"><execute>/usr/bin/assistant</execute></action></item>
+    </menu>
+    <menu id="gfx" label="gfx">
+      <item label="Front Panel Designer"><action name="Execute"><execute>/opt/FrontDesign/bin/FrontDesign</execute></action></item>
+      <item label="Gimp"><action name="Execute"><execute>/usr/bin/gimp</execute></action></item>
+      <item label="inkscape"><action name="Execute"><execute>/usr/bin/inkscape</execute></action></item>
+      <item label="rawstudio"><action name="Execute"><execute>/usr/bin/rawstudio</execute></action></item>
+      <item label="geequie"><action name="Execute"><execute>/usr/bin/geeqie</execute></action></item>
+      <item label="luminance-hdr"><action name="Execute"><execute>/usr/bin/luminance-hdr</execute></action></item>
+      <item label="hugin"><action name="Execute"><execute>/usr/bin/hugin</execute></action></item>
+    </menu>
+    <menu id="fun" label="fun">
+      <item label="lxrandr"><action name="Execute"><execute>//usr/bin/lxrandr</execute></action></item>
+      <item label="pavucontrol"><action name="Execute"><execute>/usr/bin/pavucontrol</execute></action></item>
+      <item label="rhythmbox"><action name="Execute"><execute>/usr/bin/rhythmbox</execute></action></item>
+    </menu>
+    <separator/>
+    <menu id="openbox" label="onbx">
+      <item label="Reconfigure"><action name="Reconfigure"/></item>
+      <item label="Restart"><action name="Restart"/></item>
+      <item label="Edit Menu"><action name="Execute"><execute>/usr/bin/emacs- ".config/openbox/autostart.sh" ".config/openbox/menu.xml" ".config/openbox/rc.xml"</execute></action></item>
+    </menu>
+    <menu id="life" label="sys">
+      <item label="Shutdown"><action name="Execute"><execute>sudo /sbin/shutdown -h now</execute></action></item>
+      <item label="Reboot"><action name="Execute"><execute>sudo /sbin/shutdown -r now</execute></action></item>
+      <item label="Sleep"><action name="Execute"><execute>sudo /sbin/pm-suspend</execute></action></item>
+    </menu>
+    
+    <separator/>
+    <item label="Logout"><action name="Exit"/></item>
+  </menu>
+</openbox_menu>
