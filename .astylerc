@@ -1,0 +1,39 @@
+
+--style=java #-A2
+--indent=spaces=2 #-s2
+--indent-classes #-C
+--indent-switches #-S
+--indent-cases  #-K
+--indent-namespaces #-N
+--indent-labels  #-L
+--indent-preprocessor  # -w
+--indent-col1-comments  # -Y
+--min-conditional-indent=1
+
+# -m#
+#    Indent a minimal # spaces in a continuous conditional
+# belonging to a conditional header.
+# The valid values are:
+# 0 - no minimal indent.
+# 1 - indent at least one additional indent.
+# 2 - indent at least two additional indents.
+# 3 - indent at least one-half an additional indent.
+# The default value is 2, two additional indents.
+
+--max-instatement-indent=40 #  -M#
+#    Indent a maximal # spaces in a continuous statement,
+#    relative to the previous line.
+#    The valid values are 40 thru 120.
+#    The default value is 40.
+--unpad-paren
+--pad-oper
+--pad-paren-in
+--pad-header
+--align-pointer=name
+--align-reference=name
+--keep-one-line-blocks
+--keep-one-line-statements
+--convert-tabs
+--errors-to-stdout
+--formatted
+--lineend=linux
