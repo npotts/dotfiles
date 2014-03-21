@@ -6,7 +6,7 @@
 ;; Force using aproximate colors when in terminal of the theme being used
 ;;(autoload 'color-theme-approximate-on "color-theme-approximate")
 ;;(color-theme-approximate-on)
-
+(princ "got this far\n")
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -14,13 +14,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
+ '(cua-enable-cua-keys nil)
  '(cua-mode t nil (cua-base))
  '(custom-enabled-themes (quote (tango-dark)))
+ '(ergoemacs-mode-used "5.13.12-1")
+ '(ergoemacs-theme nil)
  '(inhibit-startup-screen t)
  '(show-paren-mode t)
  '(speedbar-default-position (quote right))
- '(word-wrap nil)
-)
+ '(word-wrap nil))
 
 
 ;;auto indent rather than just a newline
@@ -193,4 +195,25 @@ Emacs buffers are those whose name starts with *."
 (global-set-key (kbd "<C-S-prior>") 'previous-emacs-buffer) ; Ctrl+Shift+PageUp
 (global-set-key (kbd "<C-S-next>") 'next-emacs-buffer) ; Ctrl+Shift+PageDown
 ;default buffer lister should be ibuffer
-(defalias 'list-buffers 'ibuffer)
+;(defalias 'list-buffers 'ibuffer)
+
+
+(princ "got this far - finished")
+
+;ergo emacs
+(setenv "ERGOEMACS_KEYBOARD_LAYOUT" "us") ; US
+(load-file "~/.emacs.d/ergoemacs/site-lisp/site-start.el")
+
+
+
+
+
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(completions-common-part ((t (:inherit default :foreground "red"))))
+ '(diredp-compressed-file-suffix ((t (:foreground "#7b68ee"))))
+ '(diredp-ignored-file-name ((t (:foreground "#aaaaaa"))))
+ '(show-paren-match ((((class color) (background light)) (:background "azure2")))))
