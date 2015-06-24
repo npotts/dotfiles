@@ -1,7 +1,7 @@
 #!/usr/bin/zsh
 # Load from Resource files
 #for file in /etc/zsh/zsh.d/rc/*.rc; do
-for file in $HOME/zsh.d/rc/*.rc; do
+for file in $HOME/.zsh.d/rc/*.rc; do
 	source $file
 done
 
