@@ -7,3 +7,4 @@
 
 [alias]
   show-rev-number = !sh -c 'git rev-list --reverse HEAD | nl | awk \"{ if(\\$1 == "$0") { print \\$2 }}\"'
+  commits = !sh -c 'git rev-list --count HEAD'
