@@ -1,0 +1,7 @@
+[push]
+	default = matching
+[user]
+	email = npotts@users.noreply.github.com
+	name = npotts
+[url "git@github.com:"]
+	insteadOf = https://github.com/

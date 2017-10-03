@@ -1,0 +1,12 @@
+#!/bin/sh
+
+set -e
+
+
+#check for antibody
+which antibody 2>/dev/null 1> /dev/null
+if [ $? -ne 0 ]; then
+    echo "Installing antibody"
+    curl -sL https://git.io/antibody | bash -s
+fi
+
