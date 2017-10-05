@@ -1,4 +1,0 @@
-source <(antibody init)
-antibody bundle < .antibody-plugins.txt
-
-
