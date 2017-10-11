@@ -7,10 +7,7 @@ source <(antibody init)
 antibody bundle < ${HOME}/.antibody-plugins.txt
 
 #source OS-specific options
-. ~/.zsh.d/`uname`
+. ~/.zsh.d/per-os/`uname`
 
 #useful functions
 source ~/.zsh.d/functions
-
-#Lots of colors for ls
-eval $(dircolors -b $HOME/.dircolors)

@@ -1,0 +1,7 @@
+#GNU / Linux Opts
+
+alias ls='ls --color=always' #needz colorz
+
+
+#Lots of colors for ls
+eval $(dircolors -b $HOME/.dircolors)
