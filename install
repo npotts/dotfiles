@@ -27,10 +27,9 @@ done
 
 rcfiles="\
   astylerc\
-  LICENSE\
+  dircolors\
   tmux.conf\
   emacs\
-  README.md\
   zshrc\
   gitconfig\
   antibody-plugins.txt\
