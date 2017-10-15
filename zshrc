@@ -9,5 +9,6 @@ antibody bundle < ${HOME}/.antibody-plugins.txt
 #source OS-specific options
 . ~/.zsh.d/per-os/`uname`
 
-#useful functions
-source ~/.zsh.d/functions
+
+source ~/.zsh.d/toolchains #import toolchains, if they exist
+source ~/.zsh.d/functions #useful functions
