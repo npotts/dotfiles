@@ -6,6 +6,7 @@ function gt {
   [ $? -eq 0 ] && go tool cover -html=cover.out -o cover.html
 }
 
+alias ".."="cd .."
 function work { cd ${WORKSPACE}; }
 function acs { cd ${GOPATH}/src/github.com/NCAR/ACSd; }
 
