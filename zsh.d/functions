@@ -20,14 +20,14 @@ function sss {
 
   case "`uname`" in
     Linux)
-      socat TCP-LISTEN:$1,fork,reuseaddr FILE:$2,cs8,rawer,speed=$3,ospeed=$3
+      socat TCP-LISTEN:$1,fork,reuseaddr FILE:$2,cs8,rawer,ispeed=$3,ospeed=$3
       ;;
     Darwin)
       echo "socat on macOS is a bit broken.  Use minicom to set the baud rate"
       socat TCP-LISTEN:$1,fork,reuseaddr FILE:$2,cs8,rawer
       ;;
     FreeBSD)
-      socat TCP-LISTEN:$1,fork,reuseaddr FILE:$2,cs8,rawer,speed=$3,ospeed=$3
+      socat TCP-LISTEN:$1,fork,reuseaddr FILE:$2,cs8,rawer,ispeed=$3,ospeed=$3
       ;;
     *)
     echo "I dont know how to run socat on `uname`"
