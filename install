@@ -33,6 +33,7 @@ rcfiles="\
   zshrc\
   gitconfig\
   antibody-plugins.txt\
+  vimrc \
   zshrc\
 "
 
