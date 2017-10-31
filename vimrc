@@ -15,4 +15,8 @@ let g:lightline = {
 
 
 " Color schema 
-colorscheme office-dark
+"colorscheme office-dark
+colorscheme dracula
+
+"show numbers
+set number
