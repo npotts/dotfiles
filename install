@@ -1,11 +1,12 @@
 #!/bin/sh
 
-export DOTFILES="${HOME}/Workspace/dotfiles"
+# export DOTFILES="${HOME}/Workspace/dotfiles"
 
 if [ -z "${DOTFILES}" ]; then
   echo "Modify install to point where your DOTFILE is installed"
   exit
 fi
+cd ${DOTFILES}
 
 #check for antibody
 antibody 2>/dev/null 1> /dev/null
@@ -15,31 +16,47 @@ if [ $? -ne 0 ]; then
 fi
 
 
-# link in all the dirs to ~/.dir
-echo "Installing dirs"
-for d in */; do
-  if [ -e "${d}" ]; then
-    echo "\t\t${d%/} -> ${HOME}/.${d%/}"
-    ln -sf "${DOTFILES}/${d%/}" "${HOME}/.${d%/}"
-  fi
-done
+
+function dirSymlinks {
+  # link in all the dirs to ~/.dir
+  echo "Installing / Updating dirs"
+  for d in */; do
+    if [ ! -L ${HOME}/.${d%/} ] ; then
+      echo "	${d%/} -> ${HOME}/.${d%/}"
+      ln -sf "${DOTFILES}/${d%/}" "${HOME}/.${d%/}"
+    fi
+  done
+}
+
+function fileSymlinks {
+  for f in *.rc; do
+    if [ ! -L ${HOME}/.${f/.rc/} ] ; then
+      echo "  ${DOTFILES}/${f} -> ${HOME}/.${f/.rc/}"
+      ln -sf "${DOTFILES}/${f}" "${HOME}/.${f/.rc/}"
+    fi
+  done
+  #
+  #
+  # rcfiles="\
+  #   astylerc\
+  #   dircolors\
+  #   tmux.conf\
+  #   emacs\
+  #   zshrc\
+  #   gitconfig\
+  #   antibody-plugins.txt\
+  #   vimrc \
+  #   zshrc\
+  # "
+  # echo "Installing / Updating <dot> files"
+  # for rc in $rcfiles; do
+  #   if [ ! -L ${HOME}/.${d%/} ] ; then
+  #     echo "	${rc} -> ${HOME}/.${rc}"
+  #     ln -sf "${DOTFILES}/${rc}" "${HOME}/.${rc}"
+  #   fi
+  # done
+}
 
 
-rcfiles="\
-  astylerc\
-  dircolors\
-  tmux.conf\
-  emacs\
-  zshrc\
-  gitconfig\
-  antibody-plugins.txt\
-  vimrc \
-  zshrc\
-"
-
-
-echo "Installing RC files"
-for rc in $rcfiles; do
-  echo "\t\t${rc} -> ${HOME}/.${rc}"
-  ln -sf "${DOTFILES}/${rc}" "${HOME}/.${rc}"
-done
+fileSymlinks
+dirSymlinks
