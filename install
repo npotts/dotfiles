@@ -15,10 +15,7 @@ if [ $? -ne 0 ]; then
     curl -sL https://git.io/antibody | bash -s
 fi
 
-
-
 function dirSymlinks {
-  # link in all the dirs to ~/.dir
   echo "Installing / Updating dirs"
   for d in */; do
     if [ ! -L ${HOME}/.${d%/} ] ; then
@@ -29,32 +26,13 @@ function dirSymlinks {
 }
 
 function fileSymlinks {
+  echo "Installing / Updating <dot> files"
   for f in *.rc; do
     if [ ! -L ${HOME}/.${f/.rc/} ] ; then
-      echo "  ${DOTFILES}/${f} -> ${HOME}/.${f/.rc/}"
+      echo "  ${f} -> ${HOME}/.${f/.rc/}"
       ln -sf "${DOTFILES}/${f}" "${HOME}/.${f/.rc/}"
     fi
   done
-  #
-  #
-  # rcfiles="\
-  #   astylerc\
-  #   dircolors\
-  #   tmux.conf\
-  #   emacs\
-  #   zshrc\
-  #   gitconfig\
-  #   antibody-plugins.txt\
-  #   vimrc \
-  #   zshrc\
-  # "
-  # echo "Installing / Updating <dot> files"
-  # for rc in $rcfiles; do
-  #   if [ ! -L ${HOME}/.${d%/} ] ; then
-  #     echo "	${rc} -> ${HOME}/.${rc}"
-  #     ln -sf "${DOTFILES}/${rc}" "${HOME}/.${rc}"
-  #   fi
-  # done
 }
 
 
