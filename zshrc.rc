@@ -1,6 +1,8 @@
 export WORKSPACE="${HOME}/Workspace"
 export DOTFILES="${WORKSPACE}/dotfiles"
 export GOPATH="${WORKSPACE}/go"
+export EDITOR="vim"
+
 # so many shifty OSs dont export full utils (heres looking to you debian)
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:${GOPATH}/bin:${PATH}"
 source <(antibody init)
