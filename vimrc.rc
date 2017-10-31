@@ -18,5 +18,8 @@ let g:lightline = {
 "colorscheme office-dark
 colorscheme dracula
 
-"show numbers
 set number
+
+
+" for now dont warn about old versions
+let g:go_version_warning = 0
