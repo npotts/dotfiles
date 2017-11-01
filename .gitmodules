@@ -10,3 +10,6 @@
 [submodule "vim/bundle/dracula-theme"]
 	path = vim/bundle/dracula-theme
 	url = git@github.com:dracula/vim.git
+[submodule "vim/bundle/vim-raml"]
+	path = vim/bundle/vim-raml
+	url = https://github.com/IN3D/vim-raml.git
