@@ -1,6 +1,3 @@
-
-
 source ~/.tmux.d/general.conf
 source ~/.tmux.d/keybindings.conf
 source ~/.tmux.d/theme.conf
-source ~/.tmux.d/tmux.conf.rc
