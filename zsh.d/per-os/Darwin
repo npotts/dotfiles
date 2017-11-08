@@ -1,3 +1,5 @@
 #macOS / Darwin opts
 
 alias ls='ls -G' #needz colorz
+alias vim=/usr/local/bin/vim
+alias vi=vim
