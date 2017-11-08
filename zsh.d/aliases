@@ -9,3 +9,4 @@ alias gc="git commit"
 
 #other helpful things
 alias v="vim"
+alias l="ls -alh"
