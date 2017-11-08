@@ -1,5 +1,6 @@
 # Various function defs
 
+function dfs { cd ${DOTFILES}; }
 
 function gt {
   go test --coverprofile='cover.out' $@
