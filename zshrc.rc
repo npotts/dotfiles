@@ -15,6 +15,7 @@ antibody bundle < ${HOME}/.antibody-plugins.txt
 source ~/.zsh.d/aliases #useful functions
 source ~/.zsh.d/toolchains #import toolchains, if they exist
 source ~/.zsh.d/functions #useful functions
-
+source ~/.zsh.d/history #history settings
 
 bindkey -e #yeah yeah yeah, vim + emacs keys
+
