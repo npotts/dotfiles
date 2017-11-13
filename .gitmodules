@@ -16,3 +16,6 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundle/vim-caddyfile"]
+	path = vim/bundle/vim-caddyfile
+	url = https://github.com/isobit/vim-caddyfile
