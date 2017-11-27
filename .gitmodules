@@ -19,3 +19,6 @@
 [submodule "vim/bundle/vim-caddyfile"]
 	path = vim/bundle/vim-caddyfile
 	url = https://github.com/isobit/vim-caddyfile
+[submodule "vim/bundle/deoplete.nvim"]
+	path = vim/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
