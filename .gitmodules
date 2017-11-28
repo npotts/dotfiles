@@ -16,3 +16,12 @@
 [submodule "vim/bundle/vim-fugitive"]
 	path = vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/bundle/vim-caddyfile"]
+	path = vim/bundle/vim-caddyfile
+	url = https://github.com/isobit/vim-caddyfile
+[submodule "vim/bundle/deoplete.nvim"]
+	path = vim/bundle/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "vim/bundle/youcompleteme"]
+	path = vim/bundle/youcompleteme
+	url = https://github.com/valloric/youcompleteme

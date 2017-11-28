@@ -5,3 +5,12 @@
 	name = npotts
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+
+
+[color]
+  diff = true
+  status = true
+  branch = true
+  interactive = true
+  ui = true
+  pager = true
