@@ -35,3 +35,9 @@ function sss {
     ;;
   esac
 }
+
+
+function declutter {
+  echo "Removing cruft (recursively) in `pwd`"
+  find . -iname "._*" -or -iname ".DS_Store" -exec rm {} \;
+}
