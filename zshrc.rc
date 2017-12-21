@@ -18,3 +18,8 @@ source ~/.zsh.d/toolchains #import toolchains, if they exist
 source ~/.zsh.d/functions #useful functions
 source ~/.zsh.d/history #history settings
 
+
+# autoload other local settings
+for i in ~/.zsh.d/autoload.d/*.zsh; do
+	. $i
+done
