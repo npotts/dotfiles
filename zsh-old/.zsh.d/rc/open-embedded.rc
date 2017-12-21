@@ -1,8 +1,0 @@
-export DISTRO="angstrom-2010.1"
-export DISTRO_DIRNAME="angstrom_2010_x"
-export OE_BUILD_DIR="/home/nickp/code/angstrom/build"
-export OE_BUILD_TMPDIR="/home/nickp/code/angstrom/build/angstrom_2010_x"
-export OE_SOURCE_DIR="/home/nickp/code/angstrom/sources"
-export OE_BASE="/home/nickp/code/angstrom"
-export BB_ENV_EXTRAWHITE="MACHINE DISTRO GIT_PROXY_COMMAND ANGSTROMLIBC http_proxy ftp_proxy https_proxy all_proxy ALL_PROXY no_proxy SSH_AGENT_PID SSH_AUTH_SOCK BB_SRCREV_POLICY SDKMACHINE BB_NUMBER_THREADS"
-export BBPATH="/home/nickp/code/angstrom/build:/home/nickp/code/angstrom/sources/openembedded"
