@@ -12,14 +12,8 @@ antibody bundle < ${HOME}/.antibody-plugins.txt
 #source OS-specific options
 . ~/.zsh.d/per-os/`uname`
 
-source ~/.zsh.d/options #zsh options
-source ~/.zsh.d/aliases #useful functions
-source ~/.zsh.d/toolchains #import toolchains, if they exist
-source ~/.zsh.d/functions #useful functions
-source ~/.zsh.d/history #history settings
-
-
-# autoload other local settings
+# autoload settings.  If you name the file ".local.zsh"
+# changes will be ignored yet loaded 
 for i in ~/.zsh.d/autoload.d/*.zsh; do
 	. $i
 done
