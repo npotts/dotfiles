@@ -1,8 +1,8 @@
-" Remap <ESC> to Ctrl-Space in insert mode
-inoremap <C-@> <ESC>
+" jj in Insert mode issues an <ESC> 
+inoremap jj <ESC>
 
 "Likewise, in normal mode, drop into insert mode
-nnoremap <C-@> a
+" nnoremap <C-@> a
 
 
 "Ctrt-w closes current buffer, without saving
