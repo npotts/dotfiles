@@ -20,3 +20,11 @@ let g:NERDCommentEmptyLines = 1
 
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
+
+
+
+"NerdCommenter 
+nmap <D-/> <Plug>NERDCommenterToggle
+nmap <C-/>  <Plug>NERDCommenterToggle
+imap <D-/> <ESC><Plug>NERDCommenterToggle<CR>a
+imap <C-/>  <ESC><Plug>NERDCommenterToggle<CR>a
