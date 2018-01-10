@@ -1,6 +1,7 @@
 # Various function defs
 
 function dfs { cd ${DOTFILES}; }
+function dfsup { cd ${DOTFILES}; git pull; git submodule init; git submodule update; }
 
 function gt {
   go test --coverprofile='cover.out' $@
