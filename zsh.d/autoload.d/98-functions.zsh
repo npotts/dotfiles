@@ -42,3 +42,9 @@ function declutter {
   echo "Removing cruft (recursively) in `pwd`"
   find . -iname "._*" -or -iname ".DS_Store" -exec rm {} \;
 }
+
+
+function rsync_sane {
+  echo "Rsync, less common cruft"
+  rsync -a --cvs-exclude --exclude=".git/" $@
+}
