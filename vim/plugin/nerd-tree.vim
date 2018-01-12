@@ -1,6 +1,6 @@
 "NERD Tree settings
 
-map <C-n> :NERDTreeToggle<CR>
+map <C-\> :NERDTreeToggle<CR>
 
 
 let g:NERDTreeIndicatorMapCustom = {
