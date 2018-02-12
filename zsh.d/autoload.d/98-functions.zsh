@@ -14,7 +14,7 @@ function acs { cd ${GOPATH}/src/github.com/NCAR/ACSd; }
 
 
 function sss {
-	if [[ -z "$1" || -z "$2" || -z "$3" ]]; then
+  if [[ -z "$1" || -z "$2" || -z "$3" ]]; then
     echo "sss: socat socket starter:  Expose a Serial Port as a TCP socket"
     echo "Usage: sss <tcp-listen-port> <serial-device> <serial-baud>"
     return;
@@ -48,3 +48,13 @@ function rsync_sane {
   echo "Rsync, less common cruft"
   rsync -a --cvs-exclude --exclude=".git/" $@
 }
+
+function http_here {
+  if [[ -z "$1" ]]; then
+    echo "httpd_here: Host a webpage on port from the current working dir"
+    echo "Usage: httpd_here <tcp-listen-port>"
+    return;
+  fi
+  python -m SimpleHTTPServer $1
+}
+
