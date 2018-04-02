@@ -10,7 +10,7 @@ function gt {
 
 alias ".."="cd .."
 function work { cd ${WORKSPACE}; }
-function acs { cd ${GOPATH}/src/github.com/NCAR/ACSd; }
+function acs { cd ${GOPATH}/src/github.com/NCAR/ACS; }
 
 
 function sss {
@@ -56,5 +56,45 @@ function http_here {
     return;
   fi
   python -m SimpleHTTPServer $1
+}
+
+
+function roll-rev {
+  if [[ -z "$1" || -z "$2" ]]; then 
+    echo "Usage: roll-rev <prev-year> <next-year>"
+    echo "This tool will replace all instances of <prev> with <next> on the code base."
+    echo "This takes some special actions to get a clean git tree if you are on the root of a git repo."
+    return;
+  fi
+
+
+  if [[ -d ".git" ]]; then  
+    echo "This will do some serious git actions to get a clean tree and then roll the year" 
+    echo
+    echo "Ctrl-C quickly if this is a bad idea"
+    read
+    git reset --hard
+    git clean -f -x -d
+    git clean -f -X -d
+  fi
+
+  if [ -d vendor ]; then
+    mv vendor ..
+  fi
+
+  ack -l -- "$1" | xargs sed -i "" "s/$1/$2/g"
+
+  if [ -d ../vendor ]; then
+    mv ../vendor .
+  fi
+  
+  echo 
+  echo Replacement is done.  Look at the log to see if the changes look ok.
+  echo
+  if [[ -d ".git" ]]; then;
+    git diff
+    echo If all looks well, do a 'git commit -a' and push the changes;
+  fi
+
 }
 
