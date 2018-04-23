@@ -3,6 +3,6 @@
 alias ls='ls -G' #needz colorz
 alias vim=/usr/local/bin/vim
 alias vi=vim
-
+export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
 alias reload_dns_cache="killall -HUP mDNSResponder"
