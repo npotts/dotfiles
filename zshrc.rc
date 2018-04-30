@@ -7,6 +7,7 @@ export EDITOR="vim"
 export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:${GOPATH}/bin:${PATH}"
 source <(antibody init)
 export PURE_PROMPT_SYMBOL="λ"
+setopt prompt_subst #needed since sometimes pure doesnt init properly
 antibody bundle < ${HOME}/.antibody-plugins.txt
 
 #source OS-specific options
