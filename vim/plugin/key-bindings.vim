@@ -30,4 +30,6 @@ map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
 nnoremap <leader>a :cclose<CR>
 
-
+" Ctrl-K means close buffer
+nmap <C-k> :bd!<CR>
+imap <C-k> <ESC>:bd!<CR>
