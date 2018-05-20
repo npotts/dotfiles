@@ -11,7 +11,8 @@ function timelapse {
         return
     fi
     mkdir -p "$1"
-    gphoto2 --set-config flashmode=0 -I 10 -F 3600 --capture-image-and-download --force-overwrite --filename "$1/%Y%m%d%H%M%S.jpg"
+    #gphoto2 --set-config flashmode=0 -I 10 -F 3600 --capture-image-and-download --force-overwrite --filename "$1/%Y%m%d%H%M%S.jpg"
+    gphoto2 --set-config flashmode=0 -I 10 --capture-image-and-download --force-overwrite --filename "$1/%Y%m%d%H%M%S.jpg"
 }
 
 function timelapse-compile {
