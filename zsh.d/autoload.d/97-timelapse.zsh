@@ -20,7 +20,7 @@ function timelapse-compile {
         echo "Usage: timelapse-comile <output>"
         return
     fi
-    mencoder "mf://*.jpg" -mf fps=12:type=jpg -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell:vbitrate=7000 -vf scale=640:480 -oac copy -o $:w
+    mencoder "mf://*.jpg" -mf fps=12:type=jpg -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell:vbitrate=7000 -vf scale=640:480 -oac copy -o $1
 }
 
 function timestamp-image {
