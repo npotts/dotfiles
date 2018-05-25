@@ -24,6 +24,15 @@ function timelapse-compile {
     mencoder "mf://*.jpg" -mf fps=12:type=jpg -ovc lavc -lavcopts vcodec=mpeg4:mbd=2:trell:vbitrate=7000 -vf scale=640:480 -oac copy -o $1
 }
 
+function timelapse-to-mp4 {
+    if [[ -z "$1" || -z "$2" || -z "$3" ]]; then 
+        echo "timelapse-to-mp4: encode a bunch of jpegs to a mp4 video"
+        echo "Usage: timelapse-to-mp4 <dir-with-files> <framerate> <output>"
+        return
+    fi
+    ffmpeg -pattern_type glob -i "$1/*.jpg" -r $2 -c:v libx264 -pix_fmt yuv420p -s hd1080 $3
+}
+
 function timestamp-image {
     if [[ -z "$1" ]]; then
         echo "timestamp-image: insert a timestamp in the lower right corner of an image" 
