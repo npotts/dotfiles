@@ -43,3 +43,12 @@
 [submodule "vim/bundle/rainbow_parentheses.vim"]
 	path = vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim
+[submodule "vim/bundle/nvim-yarp"]
+	path = vim/bundle/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp
+[submodule "vim/bundle/vim-hug-neovim-rpc"]
+	path = vim/bundle/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "vim/plugin/deoplete-go"]
+	path = vim/plugin/deoplete-go
+	url = https://github.com/zchee/deoplete-go
