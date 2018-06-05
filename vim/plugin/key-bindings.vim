@@ -33,3 +33,12 @@ nnoremap <leader>a :cclose<CR>
 " Ctrl-K means close buffer
 nmap <C-k> :bd!<CR>
 imap <C-k> <ESC>:bd!<CR>
+
+
+
+" leader-cd changes to the directory of the current file
+nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+
+
+" leader-e sources vim config
+nnoremap <leader>sv :source $MYVIMRC<CR>
