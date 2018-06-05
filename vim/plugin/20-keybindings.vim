@@ -5,23 +5,6 @@ let mapleader = ' '
 " jj in Insert mode issues an <ESC> 
 inoremap jj <ESC>
 
-"Likewise, in normal mode, drop into insert mode
-" nnoremap <C-@> a
-
-
-"Ctrt-w closes current buffer, without saving
-"nnoremap <C-w> :bd!<CR>
-"imap <C-w> <ESC><C-w><CR>
-
-
-"Rather than use Ctrl-W-CtrW to move around, use Ctrl-`
-"noremap <C-`> <C-w>
-"
-"
-"
-
-
-
 "in go FileType, <leader>-b and r run build and go-build and go-run
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
@@ -42,3 +25,26 @@ nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 
 " leader-e sources vim config
 nnoremap <leader>sv :source $MYVIMRC<CR>
+
+
+" better searching using normal regex's
+nnoremap / /\v
+vnoremap / /\v
+" remap leader-space to stop highlighting
+nnoremap <leader><space> :noh<cr>
+nnoremap <tab> %
+vnoremap <tab> %
+
+
+" This first mapping makes ,w open a new vertical
+" split and switch over to it. Because really, how
+" often do you split your window and not want to do
+" something in the new split?
+nnoremap <leader>w <C-w>v<C-w>l
+
+
+"NerdCommenter bindings.  
+nmap <D-/> <Plug>NERDCommenterToggle
+nmap <C-/>  <Plug>NERDCommenterToggle
+imap <D-/> <ESC><Plug>NERDCommenterToggle<CR>a
+imap <C-/>  <ESC><Plug>NERDCommenterToggle<CR>a
