@@ -8,3 +8,8 @@ if [ -d "/opt/msp430" ]; then
   export MSP430ROOT="/opt/msp430"
   export PATH="${PATH}:${MSP430ROOT}/bin"
 fi
+
+#NodeJS
+if [ -d /usr/local/node ]; then
+    export PATH="${PATH}:/usr/local/node/bin"
+fi
