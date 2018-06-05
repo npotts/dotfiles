@@ -50,5 +50,5 @@
 	path = vim/bundle/vim-hug-neovim-rpc
 	url = https://github.com/roxma/vim-hug-neovim-rpc
 [submodule "vim/plugin/deoplete-go"]
-	path = vim/plugin/deoplete-go
+	path = vim/bundle/deoplete-go
 	url = https://github.com/zchee/deoplete-go
