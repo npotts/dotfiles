@@ -48,3 +48,15 @@ nmap <D-/> <Plug>NERDCommenterToggle
 nmap <C-/>  <Plug>NERDCommenterToggle
 imap <D-/> <ESC><Plug>NERDCommenterToggle<CR>a
 imap <C-/>  <ESC><Plug>NERDCommenterToggle<CR>a
+
+
+"leader-b-n: go to next buffer view
+nnoremap <leader>n :bn!<CR>
+nnoremap <leader>p :bp!<CR>
+"move to the another (next) buffer, and kill the one we just left
+nnoremap <leader>d :bn\|bd! #<CR>
+
+"likewise, move around in tabs
+nnoremap <leader>tn :tabn<CR>
+nnoremap <leader>tp :tabp<CR>
+nnoremap <leader>tc :tabe!<CR>
