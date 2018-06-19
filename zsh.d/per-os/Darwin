@@ -5,4 +5,8 @@ alias vim=/usr/local/bin/vim
 alias vi=vim
 export PATH="/usr/local/bin:/usr/local/sbin:${PATH}"
 
+if [ -d "/Applications/MacVim.app/Contents/bin" ]; then
+  export PATH="${PATH}:/Applications/MacVim.app/Contents/bin/"
+fi
+
 alias reload_dns_cache="killall -HUP mDNSResponder"
