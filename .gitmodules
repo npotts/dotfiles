@@ -52,3 +52,6 @@
 [submodule "vim/plugin/deoplete-go"]
 	path = vim/bundle/deoplete-go
 	url = https://github.com/zchee/deoplete-go
+[submodule "vim/bundle/vim-jsx"]
+	path = vim/bundle/vim-jsx
+	url = https://github.com/mxw/vim-jsx.git
