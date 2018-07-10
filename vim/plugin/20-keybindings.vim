@@ -4,6 +4,8 @@ let mapleader = ' '
 
 " jj in Insert mode issues an <ESC> 
 inoremap jj <ESC>
+vnoremap jj <ESC>
+vnoremap // <ESC>
 
 "in go FileType, <leader>-b and r run build and go-build and go-run
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
@@ -55,8 +57,15 @@ nnoremap <leader>n :bn!<CR>
 nnoremap <leader>p :bp!<CR>
 "move to the another (next) buffer, and kill the one we just left
 nnoremap <leader>d :bn\|bd! #<CR>
+nnoremap <leader>D :bd!<CR>
 
 "likewise, move around in tabs
 nnoremap <leader>tn :tabn<CR>
 nnoremap <leader>tp :tabp<CR>
 nnoremap <leader>tc :tabe!<CR>
+
+
+" ctrl-g drops to vim cmd entry
+inoremap <C-g> <ESC>:
+nnoremap <C-g> <ESC>:
+vnoremap <C-g> <ESC>:
