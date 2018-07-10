@@ -76,3 +76,22 @@ set tabstop=2       " The width of a TAB is set to 4.
 set shiftwidth=2    " Indents will have a width of 4.
 set softtabstop=2   " Sets the number of columns for a TAB.
 set expandtab       " Expand TABs to spaces.
+
+
+
+" Folding goodness.  Helpful keybindings: 
+" z+o open fold at curser
+" z+O opens all folds at curser
+" z+c close fold at curser
+" z+m increase fold level by 1
+" z+M closes all folds
+" z+r decrease fold level by 1
+" z+R decrese foldlevel to zero: open all folds
+set foldmethod=indent
+"set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
+
+
