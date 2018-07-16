@@ -15,7 +15,7 @@ if [ -d /usr/local/node ]; then
 fi
 
 
-if [ -d ${HOME}/Workspace/FlameGraph ]; then
+if [ -d ${WORKSPACE}/FlameGraph ]; then
   # useful:  checkout  https://github.com/brendangregg/FlameGraph.git to ~/Workspace for flame utils
   export PATH="${PATH}:${HOME}/Workspace/FlameGraph"
 fi
