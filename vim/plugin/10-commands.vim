@@ -10,3 +10,7 @@ endfunction
 
 "acs -> cd to ACS dir
 command! Acs call AcsCwd()
+
+"I fat finger <shift>;w often
+command! W :w!
+command! Q :q!
