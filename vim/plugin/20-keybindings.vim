@@ -69,3 +69,9 @@ nnoremap <leader>tc :tabe!<CR>
 inoremap <C-g> <ESC>:
 nnoremap <C-g> <ESC>:
 vnoremap <C-g> <ESC>:
+
+
+nnoremap <leader>t :GoTest 
+nnoremap <leader>T :GoCoverage<CR>
+
+
