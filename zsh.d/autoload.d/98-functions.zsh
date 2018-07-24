@@ -37,6 +37,15 @@ function sss {
   esac
 }
 
+function tcp-fwd {
+  if [[ -z "$1" || -z "$2" ]]; then
+    echo "tcp-fwd: Use socat to create a tcp forwarding tunnel"
+    echo "Usage: tcp-fwd <local-port> <target:targetport>"
+    return;
+  fi
+
+  socat TCP-LISTEN:$1,reuseaddr TCP:$2
+}
 
 function declutter {
   echo "Removing cruft (recursively) in `pwd`"
