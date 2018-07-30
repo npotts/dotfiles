@@ -74,4 +74,7 @@ vnoremap <C-g> <ESC>:
 nnoremap <leader>t :GoTest 
 nnoremap <leader>T :GoCoverage<CR>
 
-
+inoremap <LeftMouse> <Esc>   "normally causes visual selection mode
+inoremap <2-LeftMouse> <Esc> "normally causes visual word selection mode
+inoremap <3-LeftMouse> <Esc> "normally causes visual line selection mode
+inoremap <4-LeftMouse> <Esc> "normally causes visual block selection mode
