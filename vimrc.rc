@@ -1,5 +1,8 @@
 " This sets the absolute minimum in order to load.  See ~/.vim/plugin for the actual config
 set nocompatible
 
+set shell=zsh
+set shellcmdflag=-ci
+
 execute pathogen#infect()
 call pathogen#helptags()

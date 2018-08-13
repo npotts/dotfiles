@@ -73,8 +73,11 @@ nnoremap <C-g> <ESC>:
 vnoremap <C-g> <ESC>:
 
 
-nnoremap <leader>t :GoTest 
-nnoremap <leader>T :GoCoverage<CR>
+"b normally builds, B TestCompiles 
+nnoremap <leader>B :GoTestCompile<CR>
+nnoremap <leader>t :GoCoverage<CR>
+nnoremap <leader>T :GoCoverageToggle<CR>
+
 
 "normally causes visual selection mode -> NOOP
 inoremap <LeftMouse> <Esc>   
