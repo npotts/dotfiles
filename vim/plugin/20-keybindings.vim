@@ -7,6 +7,8 @@ inoremap jj <ESC>
 vnoremap jj <ESC>
 vnoremap // <ESC>
 
+nnoremap <leader>w :w!<CR>
+
 "in go FileType, <leader>-b and r run build and go-build and go-run
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
 autocmd FileType go nmap <leader>r  <Plug>(go-run)
@@ -42,7 +44,7 @@ vnoremap <tab> %
 " split and switch over to it. Because really, how
 " often do you split your window and not want to do
 " something in the new split?
-nnoremap <leader>w <C-w>v<C-w>l
+nnoremap <leader>W <C-w>v<C-w>l
 
 
 "NerdCommenter bindings.  
@@ -83,5 +85,7 @@ inoremap <3-LeftMouse> <Esc>
 "normally causes visual block selection mode
 inoremap <4-LeftMouse> <Esc> 
 
-
+"Ctrl-W in insert means exit and reissue C-W in normal
+inoremap <C-w> <ESC><C-w>
+vnoremap <C-w> <ESC><C-w>
 
