@@ -55,7 +55,9 @@ set colorcolumn=85
 let g:lightline = {
       \ 'colorscheme': 'Dracula',
       \ }
-
+" per https://github.com/dracula/vim/issues/65 - We really dont want
+" a really ugly brown background color - so turn it off
+let g:dracula_colorterm=0
 colorscheme dracula
 
 
