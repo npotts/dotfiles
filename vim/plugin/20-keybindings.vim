@@ -45,6 +45,7 @@ vnoremap <tab> %
 " often do you split your window and not want to do
 " something in the new split?
 nnoremap <leader>W <C-w>v<C-w>l
+nnoremap <leader>H <C-w>s<C-w>j
 
 
 "NerdCommenter bindings.  
