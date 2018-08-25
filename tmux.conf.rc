@@ -4,3 +4,7 @@ source ~/.tmux.d/theme.conf
 
 
 set -g default-terminal "screen-256color"
+
+set -g @nord_tmux_no_patched_font "1"
+
+run-shell "~/.tmux/themes/nord-tmux/nord.tmux"

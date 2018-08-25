@@ -49,16 +49,22 @@ set incsearch
 set showmatch
 set hlsearch
 
-set formatoptions=qrn1
+set formatoptions="n1jtcoql" "leave off r since that gets annoting with /**/ type comments
 set colorcolumn=85
 
 let g:lightline = {
-      \ 'colorscheme': 'Dracula',
+      \ 'colorscheme': 'nord',
       \ }
 " per https://github.com/dracula/vim/issues/65 - We really dont want
 " a really ugly brown background color - so turn it off
-let g:dracula_colorterm=0
-colorscheme dracula
+" let g:dracula_colorterm=0
+" colorscheme dracula
+"let g:nord_italic = 1
+"let g:nord_underline = 1
+"let g:nord_italic_comments = 1
+let g:nord_comment_brightness = 20
+
+colorscheme nord
 
 
 " Only do this part when compiled with support for autocommands.
