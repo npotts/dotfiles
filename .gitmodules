@@ -61,3 +61,6 @@
 [submodule "vim/bundle/nord-vim"]
 	path = vim/bundle/nord-vim
 	url = http://github.com/arcticicestudio/nord-vim.git
+[submodule "vim/bundle/vim-gfm-syntax"]
+	path = vim/bundle/vim-gfm-syntax
+	url = https://github.com/rhysd/vim-gfm-syntax

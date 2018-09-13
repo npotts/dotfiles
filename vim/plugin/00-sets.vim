@@ -1,6 +1,18 @@
 
+let g:gfm_syntax_enable_always = 1
+let g:gfm_syntax_enable_filetypes = ['markdown.gfm']
+let g:markdown_fenced_languages = ['cpp', 'go', 'json', 'sh']
+
+let g:gfm_syntax_highlight_inline_code = 1 "If 0, inline codes won't be highlighted.
+let g:gfm_syntax_highlight_mention = 1 "	If 0, mentions won't be highlighted.
+let g:gfm_syntax_highlight_strikethrough = 1 "	If 0, strikethrough won't be highlighted.
+let g:gfm_syntax_highlight_emoji = 1 "	If 0, emojis won't be highlighted.
+let g:gfm_syntax_highlight_table = 1 "	If 0, tables won't be highlighted.
+let g:gfm_syntax_highlight_issue_number	= 1 "If 0, issue number won't be highlighted
+let g:gfm_syntax_highlight_checkbox = 1 "If 0, check box won't be highlighted= 1 "
+let g:gfm_syntax_emoji_conceal = 1 "  emojis such as :dog:
 " .md means markdown not modula....
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+autocmd BufRead,BufNew,BufNewFile *.md set ft=markdown.gfm
 
 
 " Let's save undo info!
@@ -104,4 +116,7 @@ set foldlevel=2
 " never use the mouse to go into visual mode.  Its obnoxious as best
 set mouse=in
 " set mouse-=a
+
+
+
 
