@@ -10,7 +10,7 @@ function gt {
 
 alias ".."="cd .."
 function work { cd ${WORKSPACE}; }
-function acs { cd ${GOPATH}/src/github.com/NCAR/ACS; }
+function acsd { cd ${GOPATH}/src/github.com/NCAR/ACS; }
 
 
 function sss {
