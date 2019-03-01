@@ -3,10 +3,10 @@ export DOTFILES="${WORKSPACE}/dotfiles"
 export EDITOR="vim"
 
 # so many shifty OSs dont export full utils (heres looking to you debian)
-export PATH="/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:/usr/local/go/bin:${GOPATH}/bin:${PATH}"
-source <(antibody init)
 export PURE_PROMPT_SYMBOL="λ"
 setopt prompt_subst #needed since sometimes pure doesnt init properly
+
+source <(antibody init)
 antibody bundle < ${HOME}/.antibody-plugins.txt
 
 #source OS-specific options

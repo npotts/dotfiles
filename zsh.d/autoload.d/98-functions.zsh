@@ -9,9 +9,9 @@ function gt {
 }
 
 alias ".."="cd .."
-function work { cd ${WORKSPACE}; }
-function acsd { cd ${GOPATH}/src/github.com/NCAR/ACS; }
+alias "."="ls -al ."
 
+function work { cd ${WORKSPACE}; }
 
 function sss {
   if [[ -z "$1" || -z "$2" || -z "$3" ]]; then
