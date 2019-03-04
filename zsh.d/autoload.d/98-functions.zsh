@@ -9,7 +9,7 @@ function gt {
 }
 
 alias ".."="cd .."
-alias "."="ls -al ."
+#alias "."="ls -al ."
 
 function work { cd ${WORKSPACE}; }
 
