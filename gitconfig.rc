@@ -1,5 +1,5 @@
 [push]
-	default = matching
+	default = current
 [user]
 	email = npotts@users.noreply.github.com
 	name = npotts
