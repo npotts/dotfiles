@@ -14,3 +14,8 @@
   interactive = true
   ui = true
   pager = true
+
+
+[alias] 
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%an, %cr)%Creset' --abbrev-commit --date=relative
+  rmf = rm -r -f
