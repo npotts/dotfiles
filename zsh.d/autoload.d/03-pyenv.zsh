@@ -3,6 +3,3 @@
 # CPPFLAGS=-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite3/include pyenv install -v 3.6.8
 export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
-
-
-eval "$(pyenv virtualenv-init -)"
