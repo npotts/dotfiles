@@ -21,7 +21,10 @@ nnoremap <leader>a :cclose<CR>
 nmap <C-k> :bd!<CR>
 imap <C-k> <ESC>:bd!<CR>
 
-
+"nmap <C-q> :q!<CR>
+"imap <C-q> <ESC>:q!<CR>
+nnoremap <C-~> :q!<CR>
+inoremap <C-~> <ESC>:q!<CR>
 
 " leader-cd changes to the directory of the current file
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>

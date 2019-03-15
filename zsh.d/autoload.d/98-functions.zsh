@@ -110,3 +110,7 @@ function roll-rev {
 function docker-image-declutter {
   docker images | grep "<none>" | cut -d " " -f 33 | xargs docker rmi -f
 }
+
+function reload {
+  source ~/.zshrc
+}

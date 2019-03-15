@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#/usr/bin/env zsh
 
 # export DOTFILES="${HOME}/Workspace/dotfiles"
 
@@ -9,21 +9,21 @@ fi
 cd ${DOTFILES}
 
 #check for antibody
-antibody 2>/dev/null 1> /dev/null
-if [ $? -ne 0 ]; then
+  antibody 2>/dev/null 1> /dev/null
+  if [ $? -ne 0 ]; then
     echo "Installing antibody"
     curl -sL https://git.io/antibody | bash -s
-fi
+  fi
 
-function dirSymlinks {
-  echo "Installing / Updating dirs"
-  for d in */; do
-    if [ ! -L ${HOME}/.${d%/} ] ; then
-      echo "	${d%/} -> ${HOME}/.${d%/}"
-      ln -sf "${DOTFILES}/${d%/}" "${HOME}/.${d%/}"
-    fi
-  done
-}
+  function dirSymlinks {
+    echo "Installing / Updating dirs"
+    for d in */; do
+      if [ ! -L ${HOME}/.${d%/} ] ; then
+        echo "	${d%/} -> ${HOME}/.${d%/}"
+        ln -sf "${DOTFILES}/${d%/}" "${HOME}/.${d%/}"
+      fi
+    done
+  }
 
 function fileSymlinks {
   echo "Installing / Updating <dot> files"
@@ -35,6 +35,14 @@ function fileSymlinks {
   done
 }
 
+function vimModules {
+  if [ ! -L ${HOME}/.vim ]; then
+    return
+  fi
+  zsh `pwd`/vim-modules.zsh
+}
 
 fileSymlinks
 dirSymlinks
+vimModules
+
