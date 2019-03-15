@@ -3,6 +3,7 @@ bindirs=(
     "/bin/"
     "/sbin/"
     "/usr/local/opt/postgresql@10/bin" #befor /usr/bin for useage on macOS
+    "/usr/local/opt/postgresql@11/bin" #befor /usr/bin for useage on macOS
     "/usr/local/bin"
     "/usr/local/sbin"
     "/usr/bin"
