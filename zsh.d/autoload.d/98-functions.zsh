@@ -9,9 +9,16 @@ function gt {
 }
 
 alias ".."="cd .."
-#alias "."="ls -al ."
 
-function work { cd ${WORKSPACE}; }
+function work {
+  echo "1=$1"
+  if [ -z "$1" ]; then
+    cd ${WORKSPACE};
+  else 
+    
+    cd ${WORKSPACE}/$1;
+  fi
+}
 
 function sss {
   if [[ -z "$1" || -z "$2" || -z "$3" ]]; then
