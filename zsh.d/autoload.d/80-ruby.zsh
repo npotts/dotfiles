@@ -7,7 +7,11 @@ if [ -e /usr/local/opt/chruby/share/chruby/auto.sh ]; then
   source /usr/local/opt/chruby/share/chruby/auto.sh
 fi
 
-
+# ruby specific
+if type rbenv > /dev/null; then
+  # alterd $PATH so do after PATH has been set
+  eval "$(rbenv init -)"
+fi
 
 
 function ruby_rbenv_install() {
