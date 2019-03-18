@@ -11,7 +11,6 @@ function gt {
 alias ".."="cd .."
 
 function work {
-  echo "1=$1"
   if [ -z "$1" ]; then
     cd ${WORKSPACE};
   else 
