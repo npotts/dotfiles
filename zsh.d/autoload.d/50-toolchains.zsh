@@ -8,9 +8,21 @@ if [ -d "/opt/msp430" ]; then
 fi
 
 
+function add_brew_links() {
+  if [ -d "$1/opt/$2" ]; then
+    #hack CFLAGS  LDFLAGS 
+    export CFLAGS="${CFLAGS} -I$1/opt/$2/include"
+    export LDFLAGS="${LDFLAGS} -L$1/opt/$2/lib"
+  fi
+}
 
-if [ -d "/usr/local/opt/openssl" ]; then
-  #brew's openssl install alter CPPFlags and LDFlags
-  export CPPFLAGS=-I/usr/local/opt/openssl/include
-  export LDFLAGS=-L/usr/local/opt/openssl/lib
+
+if command -v xcrun &> /dev/null; then 
+  export CFLAGS="${CFLAGS} -I$(xcrun --show-sdk-path)/usr/include"
 fi
+if command -v brew &> /dev/null; then 
+  brew_prefix=$(brew --prefix)
+  add_brew_links "$brew_prefix" openssl
+  add_brew_links "$brew_prefix" readline
+fi
+
