@@ -34,4 +34,5 @@
   S = status
   tags = tag
   cp = cherry-pick
-  
+  nuke =  "!f() { git stash push -u; git stash drop; git clean -f -d -x; git clean -f -d -X; git reset --hard; }; f"
+
