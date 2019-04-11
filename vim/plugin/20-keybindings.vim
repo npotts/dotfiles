@@ -96,3 +96,6 @@ inoremap <4-LeftMouse> <Esc>
 inoremap <C-w> <ESC><C-w>
 vnoremap <C-w> <ESC><C-w>
 
+"command-t binding 
+nnoremap <F1> :CommandT<CR>
+nnoremap <F2> :CommandTCommand<CR>
