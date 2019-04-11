@@ -1,6 +1,7 @@
 
 --ignore-dir=.pants.d
 --ignore-dir=vendor
+--ignore-dir=.vscode
 --ignore-dir=node_modules
 --ignore-file=is:cover.out
 --ignore-file=is:cover.html
