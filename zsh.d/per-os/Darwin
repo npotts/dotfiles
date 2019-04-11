@@ -6,3 +6,5 @@ alias vi=vim
 
 alias reload_dns_cache="killall -HUP mDNSResponder"
 alias zoom_is_dead="killall VDCAssistant"
+
+defaults write com.apple.CrashReporter DialogType none
