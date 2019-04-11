@@ -4,6 +4,7 @@ bindirs=(
     "/sbin/"
     "/usr/local/opt/postgresql@10/bin" #befor /usr/bin for useage on macOS
     "/usr/local/opt/postgresql@11/bin" #befor /usr/bin for useage on macOS
+    "${HOME}/Library/Python/3.7/bin" 
     "/usr/local/bin"
     "/usr/local/sbin"
     "/usr/bin"
@@ -12,6 +13,7 @@ bindirs=(
     "${HOME}/bin"
     "/usr/local/go/bin"
     "${HOME}/go/bin"
+    "/Applications/VSCodium.app/Contents/Resources/app/bin"
     "/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
     "/Applications/MacVim.app/Contents/bin"
     "/usr/local/node/bin"
