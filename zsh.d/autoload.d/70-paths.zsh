@@ -5,6 +5,7 @@ bindirs=(
     "/usr/local/opt/postgresql@10/bin" #befor /usr/bin for useage on macOS
     "/usr/local/opt/postgresql@11/bin" #befor /usr/bin for useage on macOS
     "${HOME}/Library/Python/3.7/bin" 
+    "/usr/local/Cellar/ruby/2.6.2/bin"
     "/usr/local/bin"
     "/usr/local/sbin"
     "/usr/bin"
