@@ -29,7 +29,6 @@
   pl = pull -p
   p = pull -p
   pu = push
-  P = push
   st = status
   S = status
   tags = tag
