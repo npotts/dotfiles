@@ -30,6 +30,7 @@ vimplugs=(
   https://github.com:zivyangll/git-blame.vim
 )
 
+mkdir -p ~/.vim/bundle
 pushd  ~/.vim/bundle &> /dev/null
 for i in $vimplugs; do
   u="${i##*/}"
@@ -40,8 +41,8 @@ for i in $vimplugs; do
     git pull &> /dev/null
     popd &> /dev/null
   else
-    echo "git clone in $i"
-    git clone --recurse-submodules $i &> /dev/null
+    echo "git clone in $i to $u"
+    git clone --recurse-submodules $i $u &> /dev/null
   fi
 done
 popd &> /dev/null
