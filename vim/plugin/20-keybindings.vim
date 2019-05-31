@@ -102,4 +102,4 @@ nnoremap <F1> :CommandT<CR>
 nnoremap <F2> :CommandTCommand<CR>
 
 
-innoremap <leader>B :<C-u>call gitblame#echo()<CR>
+nnoremap <leader>B :<C-u>call gitblame#echo()<CR>
