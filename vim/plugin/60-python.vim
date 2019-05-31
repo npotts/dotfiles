@@ -5,4 +5,4 @@ let python_highlight_all=1
 let g:flake8_quickfix_location="topright"
 let g:flake8_naming_marker='' "dont warn about namings
 
-
+autocmd BufWritePre *.py execute ':Black'

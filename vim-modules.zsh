@@ -27,7 +27,8 @@ vimplugs=(
   https://github.com/vim-scripts/indentpython.vim
   https://github.com/nvie/vim-flake8.git
   https://github.com/vim-syntastic/syntastic
-  https://github.com:zivyangll/git-blame.vim
+  https://github.com/zivyangll/git-blame.vim
+  https://github.com/python/black
 )
 
 pushd  ~/.vim/bundle &> /dev/null
