@@ -120,3 +120,15 @@ function docker-image-declutter {
 function reload {
   source ~/.zshrc
 }
+
+function rebase {
+  while [ 1 ] ; do
+    git status; 
+    git rebase --continue; 
+    sleep 1; 
+  done
+}
+
+
+
+
