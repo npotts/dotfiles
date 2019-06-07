@@ -6,8 +6,13 @@ then
         echo "COMMIT REJECTED: commit contains code with break points. Please remove before commiting."
         echo $pdb_check
         exit 1
-else
-        echo "Code contains no break points"
 fi
 
-exit 0
+if [ -e .circleci/config.yml ]; then
+  cir=$(circleci config validate)
+  if [ ${#cir} -gt 45 ]; then
+    echo $cir
+    echo "COMMMIT REJECTED: CircleCI config is invalid - please fix it"
+    exit 1
+  fi
+fi
