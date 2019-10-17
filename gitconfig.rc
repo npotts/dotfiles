@@ -5,8 +5,12 @@
 	name = npotts
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-
-
+[apply]
+  whitespace = warn
+[help]
+  autocorrect = 1
+[status]
+  submodule = 1
 [color]
   diff = true
   status = true
@@ -35,4 +39,17 @@
   tags = tag
   cp = cherry-pick
   nuke =  "!f() { git stash push -u; git stash drop; git clean -f -d -x; git clean -f -d -X; git reset --hard; }; f"
+  #copr = git fetch origin refs/pull/$1/head:pull-request-$1    git checkout pull-request-$1  }
+
+[core]
+  #	editor = code --wait
+  excludesfile = ~/.gitignore_global
+[rerere]
+  enabled = true
+[branch]
+  autosetuprebase = always
+#[includeIf "gitdir:~/projects/Decisiv/"]
+#  path = ~/.gitconfig-decisiv
+[commit]
+	verbose = true
 
