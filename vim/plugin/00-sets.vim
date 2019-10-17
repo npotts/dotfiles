@@ -114,8 +114,9 @@ set nofoldenable
 set foldlevel=2
 
 " never use the mouse to go into visual mode.  Its obnoxious as best
-set mouse=in
+"set mouse=in
 " set mouse-=a
+set mouse=
 
 
 
