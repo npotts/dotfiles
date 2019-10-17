@@ -29,6 +29,7 @@ vimplugs=(
   https://github.com/vim-syntastic/syntastic
   https://github.com/zivyangll/git-blame.vim
   https://github.com/python/black
+  https://github.com/rust-lang/rust.vim
 )
 
 mkdir -p ~/.vim/bundle
