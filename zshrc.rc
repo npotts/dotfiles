@@ -3,7 +3,8 @@ export DOTFILES="${WORKSPACE}/dotfiles"
 export EDITOR="vim"
 
 # so many shifty OSs dont export full utils (heres looking to you debian)
-export PURE_PROMPT_SYMBOL="λ"
+export PURE_PROMPT_SYMBOL="λ π"
+export PURE_PROMPT_SYMBOL="√π"
 setopt prompt_subst #needed since sometimes pure doesnt init properly
 
 PATH="${PATH}:/usr/local/bin:/usr/local/sbin"

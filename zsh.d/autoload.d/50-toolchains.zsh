@@ -24,5 +24,6 @@ if command -v brew &> /dev/null; then
   brew_prefix=$(brew --prefix)
   add_brew_links "$brew_prefix" openssl
   add_brew_links "$brew_prefix" readline
+  add_brew_links "$brew_prefix" libpq
 fi
 

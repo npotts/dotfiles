@@ -12,3 +12,6 @@ defaults write com.apple.CrashReporter DialogType none
 function display-fubar {
   displayplacer "id:898DBA09-CBC4-C363-701C-7BC66C34B215 res:3840x2160 hz:60 color_depth:8 scaling:off origin:(0,0) degree:0" "id:AB6B986C-F434-2C47-A143-0B0E1135BBCA res:2160x3840 hz:60 color_depth:8 scaling:off origin:(3840,57) degree:270"
 }
+
+# DEL -> del, not  ~
+bindkey "^[[3~" delete-char
