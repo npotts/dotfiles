@@ -2,4 +2,5 @@ set prompt "\e[38;2;189;147;249mlftp \e[38;2;139;233;253m\u\e[38;2;248;248;242m\
 set color:use-color true
 set color:dir-color true
 
+set cache:enable no
 set ftp:ssl-allow false
