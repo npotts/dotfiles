@@ -4,5 +4,7 @@
 --ignore-dir=.vscode
 --ignore-dir=htmlcov
 --ignore-dir=node_modules
+--ignore-dir=fixtures
+--ignore-dir=sqlwb
 --ignore-file=is:cover.out
 --ignore-file=is:cover.html
