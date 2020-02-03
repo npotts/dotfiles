@@ -5,7 +5,7 @@ bindirs=(
     "/usr/local/opt/postgresql@10/bin" #befor /usr/bin for useage on macOS
     "/usr/local/opt/postgresql@11/bin" #befor /usr/bin for useage on macOS
     "${HOME}/Library/Python/3.7/bin" 
-    "/usr/local/Cellar/ruby/2.6.2/bin"
+    "/usr/local/opt/ruby/bin"
     "/usr/local/bin"
     "/usr/local/sbin"
     "/usr/bin"
@@ -21,6 +21,7 @@ bindirs=(
     "${MSP430ROOT}bin"
     "${HOME}/Workspace/FlameGraph"   # useful:  checkout  https://github.com/brendangregg/FlameGraph.git to ~/Workspace for flame utils
     "/opt/bin"
+    "/opt/flyway-6.1.0"
 )
 
 
@@ -32,7 +33,7 @@ for path in $bindirs; do
     
 done
 
-export PATH="${PATH}${_PATH}"
+export PATH="${_PATH}:${PATH}"
 antibody bundle < ~/.antibody-plugins.txt
 
 unset bindirs
