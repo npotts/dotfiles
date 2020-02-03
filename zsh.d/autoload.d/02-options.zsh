@@ -1,3 +1,6 @@
+#Good grief - rm -fr * means delete dont ask
+setopt rm_star_silent
+
 
 # autocomplete directory = go to it
 setopt auto_cd
