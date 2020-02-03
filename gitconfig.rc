@@ -40,6 +40,7 @@
   cp = cherry-pick
   nuke =  "!f() { git stash push -u; git stash drop; git clean -f -d -x; git clean -f -d -X; git reset --hard; }; f"
   #copr = git fetch origin refs/pull/$1/head:pull-request-$1    git checkout pull-request-$1  }
+  files-delta = "!f() { git diff --name-status | cut -f2; }; f"
 
 [core]
   #	editor = code --wait

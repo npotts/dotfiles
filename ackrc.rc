@@ -3,8 +3,12 @@
 --ignore-dir=vendor
 --ignore-dir=.vscode
 --ignore-dir=htmlcov
+--ignore-dir=log
 --ignore-dir=node_modules
 --ignore-dir=fixtures
 --ignore-dir=sqlwb
+--ignore-dir=tmp
+--ignore-dir=coverage
 --ignore-file=is:cover.out
 --ignore-file=is:cover.html
+--ignore-file=is:tags.temp

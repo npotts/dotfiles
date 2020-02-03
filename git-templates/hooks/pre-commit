@@ -8,11 +8,11 @@ then
         exit 1
 fi
 
-if [ -e .circleci/config.yml ]; then
-  cir=$(circleci config validate)
-  if [ ${#cir} -gt 45 ]; then
-    echo $cir
-    echo "COMMMIT REJECTED: CircleCI config is invalid - please fix it"
-    exit 1
-  fi
-fi
+#if [ -e .circleci/config.yml ]; then
+#  cir=$(circleci config validate)
+#  if [ ${#cir} -gt 45 ]; then
+#    echo $cir
+#    echo "COMMMIT REJECTED: CircleCI config is invalid - please fix it"
+#    exit 1
+#  fi
+#fi
