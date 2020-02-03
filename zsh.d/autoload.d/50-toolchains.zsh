@@ -13,6 +13,10 @@ function add_brew_links() {
     #hack CFLAGS  LDFLAGS 
     export CFLAGS="${CFLAGS} -I$1/opt/$2/include"
     export LDFLAGS="${LDFLAGS} -L$1/opt/$2/lib"
+
+    if [ -d "$1/opt/$2/lib/pkgconfig" ]; then
+      export PKG_CONFIG_PATH="${PKG_CONFIG_PATH}:$1/opt/$2/lib/pkgconfig"
+    fi
   fi
 }
 
@@ -25,5 +29,5 @@ if command -v brew &> /dev/null; then
   add_brew_links "$brew_prefix" openssl
   add_brew_links "$brew_prefix" readline
   add_brew_links "$brew_prefix" libpq
+  add_brew_links "$brew_prefix" ruby
 fi
-
