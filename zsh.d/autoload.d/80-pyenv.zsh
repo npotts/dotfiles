@@ -15,3 +15,6 @@ pyenv-macos-install () {
 	CPPFLAGS="-I/usr/local/opt/zlib/include -I/usr/local/opt/sqlite3/include" pyenv install -v $@
 }
 
+bmkinit() {
+   mkinit --nomods --relative -w && black __init__.py
+ }

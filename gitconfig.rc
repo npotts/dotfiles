@@ -54,3 +54,5 @@
 [commit]
 	verbose = true
 
+[pager]
+	branch = false
