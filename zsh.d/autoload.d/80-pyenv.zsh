@@ -18,5 +18,3 @@ pyenv-macos-install () {
 bmkinit() {
    mkinit --nomods --relative -w && black __init__.py
  }
-
-source $WORKSPACE/elsa/scripts/env-helpers.zsh

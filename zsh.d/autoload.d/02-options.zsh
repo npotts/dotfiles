@@ -11,7 +11,7 @@ setopt globdots
 
 
 autoload -U compinit
-compinit
+compinit -i
 zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
 zstyle ':completion:*:warnings' format '%B no matches for: %d%b'
 
