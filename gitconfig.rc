@@ -3,6 +3,8 @@
 [user]
 	email = npotts@users.noreply.github.com
 	name = npotts
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [apply]
