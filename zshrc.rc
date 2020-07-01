@@ -1,4 +1,4 @@
-export WORKSPACE="${HOME}/Workspace"
+export WORKSPACE="${HOME}/Work"
 export DOTFILES="${WORKSPACE}/dotfiles"
 export EDITOR="vim"
 
