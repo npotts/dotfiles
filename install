@@ -1,6 +1,6 @@
 #!/usr/bin/env zsh
 
-# export DOTFILES="${HOME}/Workspace/dotfiles"
+export DOTFILES="${WORK:-`pwd`/..}"/dotfiles
 
 if [ -z "${DOTFILES}" ]; then
   echo "Modify install to point where your DOTFILES is installed"
@@ -44,5 +44,7 @@ function vimModules {
 
 fileSymlinks
 dirSymlinks
+rm -fr ~/gitignore
 vimModules
+fileSymlinks
 
