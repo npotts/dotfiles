@@ -6,6 +6,8 @@
 [url "git@bitbucket.org:"]
 	insteadOf = https://bitbucket.org/
 [url "git@github.com:"]
+	insteadOf = http://github.com/
+[url "git@github.com:"]
 	insteadOf = https://github.com/
 [apply]
   whitespace = warn
