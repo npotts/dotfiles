@@ -1,4 +1,4 @@
-function aws-mfa {
+function aws-mfa-login {
     profile=${1:-mfa}
     # set -euo pipe
     mfa_arn="$(aws iam list-mfa-devices | jq -r ".MFADevices[0].SerialNumber")"
@@ -22,4 +22,22 @@ function aws-mfa {
     unset mfa_arn
     unset ntoken
     unset profile
+}
+
+
+function aws-ecr-login {
+    # Attempt to login to Docker using ecr.  Optional argument of the aws profile to use, which
+    # defaults to MFA unless changed.
+    profile=${1:-mfa}
+    region="$(aws --profile $profile configure get region)"
+    account="$(aws sts get-caller-identity | jq -r ".Account")"
+    aws --profile "$profile" ecr get-login-password | docker login --username AWS --password-stdin $account.dkr.ecr.$region.amazonaws.com
+}
+
+function aws-mfa { aws --profile mfa $@ }
+# function awslocal { aws --endpoint-url=http://localhost:4566 $@ }
+
+function aws-ssh {
+  #mfaws ssm describe-instance-information | jq ".InstanceInformationList[] | {.InstanceId "
+  mfaws  ssm start-session --target $@
 }
