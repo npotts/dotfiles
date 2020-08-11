@@ -3,6 +3,10 @@
 [user]
 	email = npotts@users.noreply.github.com
 	name = npotts
+[url "git@bitbucket.org:"]
+	insteadOf = https://bitbucket.org/
+[url "git@github.com:"]
+	insteadOf = http://github.com/
 [url "git@github.com:"]
 	insteadOf = https://github.com/
 [apply]
@@ -56,3 +60,8 @@
 
 [pager]
 	branch = false
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process

@@ -1,5 +1,5 @@
 export WORKSPACE="${HOME}/Work"
-export DOTFILES="${WORKSPACE}/dotfiles"
+export DOTFILES="${WORKSPACE}/tp/dotfiles"
 export EDITOR="vim"
 
 # so many shifty OSs dont export full utils (heres looking to you debian)
