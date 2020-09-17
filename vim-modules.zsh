@@ -1,5 +1,6 @@
 echo "git cloning vim modules"
 vimplugs=(
+  https://github.com/kien/rainbow_parentheses.vim
   https://github.com/itchyny/lightline.vim
   https://github.com/tpope/vim-sensible
   https://github.com/fatih/vim-go
@@ -14,7 +15,6 @@ vimplugs=(
   https://github.com/scrooloose/nerdtree
   https://github.com/Xuyuanp/nerdtree-git-plugin
   https://github.com/airblade/vim-gitgutter
-  https://github.com/kien/rainbow_parentheses
   https://github.com/roxma/nvim-yarp
   https://github.com/roxma/vim-hug-neovim-rpc
   https://github.com/zchee/deoplete-go
@@ -23,7 +23,6 @@ vimplugs=(
   https://github.com/arcticicestudio/nord-vim
   https://github.com/rhysd/vim-gfm-syntax
   https://github.com/chrisbra/csv.vim
-  https://github.com/kien/rainbow_parentheses.vim
   https://github.com/vim-scripts/indentpython.vim
   https://github.com/nvie/vim-flake8.git
   https://github.com/vim-syntastic/syntastic
@@ -32,6 +31,15 @@ vimplugs=(
   https://github.com/rust-lang/rust.vim
 )
 
+function safegit {
+  set -euo pipefail
+  rm -fr ~/.gitconfig
+  git config url."https://github.com/".insteadOf 'git@github.com:'
+  git  $@
+}
+
+
+set -e 
 mkdir -p ~/.vim/bundle
 pushd  ~/.vim/bundle &> /dev/null
 for i in $vimplugs; do
@@ -39,12 +47,12 @@ for i in $vimplugs; do
   if [ -d $u ]; then
     echo "git pull in $u" 
     pushd $u &> /dev/null
-    git checkout -f master &> /dev/null
-    git pull &> /dev/null
+    safegit checkout -f master &> /dev/null
+    safegit pull &> /dev/null
     popd &> /dev/null
   else
     echo "git clone in $i to $u"
-    git clone --recurse-submodules $i $u &> /dev/null
+    safegit clone -q $i $u &> /dev/null
   fi
 done
 popd &> /dev/null
@@ -63,6 +71,6 @@ ycm() {
   popd
 }
 
-commandt
-ycm
+#commandt
+#ycm
 
