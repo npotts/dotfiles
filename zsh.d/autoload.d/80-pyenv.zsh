@@ -18,3 +18,6 @@ pyenv-macos-install () {
 bmkinit() {
    mkinit --nomods --relative -w && black __init__.py
  }
+
+
+alias pytest="pytest --disable-warnings"
