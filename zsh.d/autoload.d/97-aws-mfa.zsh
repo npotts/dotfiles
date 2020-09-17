@@ -1,12 +1,20 @@
+
 function aws-mfa-login {
+    set -o pipefail
     profile=${1:-mfa}
-    # set -euo pipe
     mfa_arn="$(aws iam list-mfa-devices | jq -r ".MFADevices[0].SerialNumber")"
-    echo "Using MFA with ARN: '${mfa_arn}'"
-    echo -n "MFA Code from Device: "
-    read -s token
-    echo "Ok"
+    token="$(ykman oath code AWS -s)"
+    if [[ $? -ne 0 ]]; then
+      echo "Using MFA with ARN: '${mfa_arn}'"
+      echo -n "MFA Code from Device: "
+      read -s token
+      echo "Ok"
+    else
+      echo "Using MFA from Yuibikey"
+    fi
+
     ntoken="$(aws sts get-session-token --duration-seconds 86400 --serial-number "${mfa_arn}" --token-code "${token}")"
+    # set +e
     # ENV Vars
     export AWS_ACCESS_KEY_ID="$(echo $ntoken | jq -r ".Credentials.AccessKeyId")"
     export AWS_SECRET_ACCESS_KEY="$(echo $ntoken | jq -r ".Credentials.SecretAccessKey")"
@@ -18,10 +26,7 @@ function aws-mfa-login {
     aws --profile $profile configure set region us-east-1
     aws --profile $profile configure set output json
     echo "Keys expire at $(echo $ntoken | jq -r ".Credentials.Expiration")"
-    unset token
-    unset mfa_arn
-    unset ntoken
-    unset profile
+    return 0
 }
 
 
