@@ -29,6 +29,13 @@ function aws-mfa-login {
     return 0
 }
 
+function aws-mfa-export {
+   set -o pipefail
+   profile=${1:-mfa}
+   export AWS_ACCESS_KEY_ID="$(aws --profile ${profile} configure get aws_access_key_id)"
+   export AWS_SECRET_ACCESS_KEY="$(aws --profile ${profile} configure get aws_secret_access_key)"
+   export AWS_SESSION_TOKEN="$(aws --profile ${profile} configure get aws_session_token)"
+ }
 
 function aws-ecr-login {
     # Attempt to login to Docker using ecr.  Optional argument of the aws profile to use, which
