@@ -7,7 +7,7 @@ export PURE_PROMPT_SYMBOL="λ π"
 export PURE_PROMPT_SYMBOL="√π"
 setopt prompt_subst #needed since sometimes pure doesnt init properly
 
-PATH="${PATH}:/usr/local/bin:/usr/local/sbin"
+PATH="${PATH}:/usr/local/bin:/usr/local/sbin:${HOME}/.bin"
 source <(antibody init)
 antibody bundle < ${HOME}/.antibody-plugins.txt
 
