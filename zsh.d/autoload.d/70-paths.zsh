@@ -22,6 +22,7 @@ bindirs=(
     "${HOME}/Workspace/FlameGraph"   # useful:  checkout  https://github.com/brendangregg/FlameGraph.git to ~/Workspace for flame utils
     "/opt/bin"
     "/opt/flyway-6.1.0"
+    "/snap/bin"
 )
 
 
