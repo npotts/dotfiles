@@ -8,7 +8,7 @@ vimplugs=(
   https://github.com/IN3D/vim-raml
   https://github.com/tpope/vim-fugitive
   https://github.com/isobit/vim-caddyfile
-  https://github.com/Shougo/deoplete.nvim
+  #1https://github.com/Shougo/deoplete.nvim
   https://github.com/valloric/youcompleteme
   https://github.com/scrooloose/nerdcommenter
   https://github.com/wincent/command-t
@@ -17,7 +17,7 @@ vimplugs=(
   https://github.com/airblade/vim-gitgutter
   https://github.com/roxma/nvim-yarp
   https://github.com/roxma/vim-hug-neovim-rpc
-  https://github.com/zchee/deoplete-go
+  #https://github.com/zchee/deoplete-go
   https://github.com/mxw/vim-jsx
   https://github.com/mileszs/ack.vim
   https://github.com/arcticicestudio/nord-vim

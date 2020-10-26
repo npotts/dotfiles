@@ -35,7 +35,7 @@ let NERDTreeIgnore=['\.pyc$', '\~$']
 map <C-\> :NERDTreeToggle<CR>
 
 
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom= {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",
