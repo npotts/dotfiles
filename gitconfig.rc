@@ -38,6 +38,7 @@
   pl = pull -p
   p = pull -p
   pu = push
+  pf = push --force-with-lease
   st = status
   S = status
   tags = tag
