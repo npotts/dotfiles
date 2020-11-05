@@ -130,6 +130,6 @@ function rebase {
 }
 
 
-function svr-poweron { ssh admin@svr racadm serveraction powerup; }
-function svr-poweroff { ssh admin@svr racadm serveraction powerup; }
+function svr-poweron { ssh admin@svr-ipmi racadm serveraction powerup; }
+function svr-poweroff { ssh admin@svr-ipmi racadm serveraction powerup; }
 
