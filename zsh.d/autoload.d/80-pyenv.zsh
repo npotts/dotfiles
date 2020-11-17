@@ -21,3 +21,7 @@ bmkinit() {
 
 
 alias pytest="pytest --disable-warnings"
+
+alias pps="poetry shell"
+alias ppr="poetry run"
+
