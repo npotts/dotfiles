@@ -9,6 +9,7 @@ vnoremap // <ESC>
 
 nnoremap <leader>w :w!<CR>
 noremap <leader>q :q!<CR>
+noremap <leader>e :e!<CR>
 
 "in go FileType, <leader>-b and r run build and go-build and go-run
 autocmd FileType go nmap <leader>b  <Plug>(go-build)
