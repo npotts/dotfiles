@@ -1,3 +1,4 @@
+export SAM_CLI_TELEMETRY=0
 
 function aws-mfa-login {
     set -o pipefail
@@ -52,4 +53,20 @@ function aws-mfa { aws --profile mfa $@ }
 function aws-ssh {
   #mfaws ssm describe-instance-information | jq ".InstanceInformationList[] | {.InstanceId "
   mfaws  ssm start-session --target $@
+}
+
+
+function saw {
+  saw --profile mfa $@
+}
+
+function saw-watch-rzexposure {
+  set -eo pipefail
+  rzenv=$1
+  pipeline="$(echo rzexposure-$rzenv)"
+  tmux kill-session -t $pipeline || echo "Already dead"
+  tmux new-session -d -s ${pipeline}
+  tmux new-window -d -t ${pipeline} -n "${rzenv}::Lambda" "saw --profile mfa watch /aws/lambda/rzexposure-${rzenv}"
+  tmux new-window -d -t ${pipeline} -n "${rzenv}::ECS"    "saw --profile mfa watch /ecs/${rzenv}-rzexposure"
+  tmux attach -t ${pipeline}
 }
