@@ -12,6 +12,7 @@ bindirs=(
     "/usr/sbin"
     "${HOME}/.bin"
     "${HOME}/bin"
+    "${HOME}/.local/bin"
     "/usr/local/go/bin"
     "${HOME}/go/bin"
     "/Applications/VSCodium.app/Contents/Resources/app/bin"
