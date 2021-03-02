@@ -19,18 +19,23 @@ docker:
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $$(/bin/lsb_release -cs) stable"
 	sudo apt update
 	sudo apt install apt-transport-https ca-certificates gnupg-agent software-properties-common docker-ce docker-ce-cli containerd.io
+aws-ssm:
+	curl "https://s3.amazonaws.com/session-manager-downloads/plugin/latest/ubuntu_64bit/session-manager-plugin.deb" -o "session-manager-plugin.deb"
+	sudo dpkg -i session-manager-plugin.deb
+
+keybase:
+	curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
+	sudo apt install ./keybase_amd64.deb
+beekeeper:
+	wget --quiet -O - https://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
+	echo "deb https://dl.bintray.com/beekeeper-studio/releases disco main" | sudo tee /etc/apt/sources.list.d/beekeeper-studio.list
+	sudo apt install beekeeper-studio
+	sudo apt update
 
 
 .rz: PHONY
-rz: base
-	wget --quiet -O - https://bintray.com/user/downloadSubjectPublicKey?username=bintray | sudo apt-key add -
-	echo "deb https://dl.bintray.com/beekeeper-studio/releases disco main" | sudo tee /etc/apt/sources.list.d/beekeeper-studio.list
-	sudo apt update
+rz: base keybase aws-ssm
 	sudo apt install -y awscli qgis docker spatialite-gui spatialite-bin postgis pipenv postgresql python3-virtualenv docker
-	curl --remote-name https://prerelease.keybase.io/keybase_amd64.deb
-	sudo apt install ./keybase_amd64.deb
-	run_keybase	
-	sudo apt install beekeeper-studio
 	sudo -H pip install aws-sam-cli poetry black
 	
 
