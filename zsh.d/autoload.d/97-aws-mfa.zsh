@@ -56,12 +56,12 @@ function aws-ssh {
 }
 
 
-function saw {
+function saw-mfa {
   saw --profile mfa $@
 }
 
 function saw-watch-rzexposure {
-  set -eo pipefail
+  set -o pipefail
   rzenv=$1
   pipeline="$(echo rzexposure-$rzenv)"
   tmux kill-session -t $pipeline || echo "Already dead"
@@ -70,3 +70,13 @@ function saw-watch-rzexposure {
   tmux new-window -d -t ${pipeline} -n "${rzenv}::ECS"    "saw --profile mfa watch /ecs/${rzenv}-rzexposure"
   tmux attach -t ${pipeline}
 }
+
+function saw-batch {
+  set -o pipefail
+  pipeline="risk4"
+  tmux kill-session -t $pipeline || echo "Already dead"
+  tmux new-session -d -s ${pipeline}
+  tmux new-window -d -t ${pipeline} -n "Batch" "saw --profile mfa watch /aws/batch/job"
+  tmux attach -t ${pipeline}
+}
+
