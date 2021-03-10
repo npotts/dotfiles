@@ -69,3 +69,5 @@
 [advice]
 	addIgnoredFile = false
 	addEmptyPathspec = false
+[pull]
+	rebase = false
