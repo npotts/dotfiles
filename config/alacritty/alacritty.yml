@@ -14,7 +14,6 @@ font:
   size: 14.0
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
-
 colors:
   primary:
     background: '#2e3440'
@@ -80,7 +79,7 @@ bell:
   #color: '0x373e4d'
   color: '0x809575'
   
-background_opacity: 1
+background_opacity: .8
 selection:
   # This string contains all characters that are used as separators for
   # "semantic words" in Alacritty.

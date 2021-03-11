@@ -7,6 +7,7 @@ general {
 		color_degraded = '#ebcb8b'
 		color_bad = '#ba5e57'
 }
+#tray_output = primary
 
 order += "load"
 # order += "cpu_temperature 0"
@@ -19,16 +20,18 @@ order += "tztime local"
 order += "tztime utc"
 
 load {
-        format = "<span background='#2e3440'>&#128480; %5min</span>"
+        format = "<span background='#2e3440'>[ %5min ]</span>"
 }
 
 disk "/" {
-        format = "<span background='#b48ead'> &#128436; %free </span>"
+        format = "<span background='#b48ead'>[ %free ]</span>"
 }
 
 ethernet enp38s0 {
-        format_up = "<span background='#2e3440'>&#128423;</span>"
-        format_down = "<span background='#bf616a'>&#128423;</span>"
+        format_up = "<span background='#2e3440'>eth</span>"
+        format_down = "<span background='#bf616a'>eth</span>"
+        #format_up = "<span background='#2e3440'>&#128423;</span>"
+        #format_down = "<span background='#bf616a'>&#128423;</span>"
 }
 
 volume master {
@@ -57,7 +60,7 @@ path_exists VPN {
 }
 
 memory {
-        format = "<span background='#2e3440'> %used </span>"
+        format = "<span background='#2e3440'>[ %used RAM]</span>"
         threshold_degraded = "10%"
         format_degraded = "MEMORY: %free"
 }

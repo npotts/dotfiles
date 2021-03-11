@@ -15,12 +15,18 @@ font pango: Noto Sans 14
 
 # xss-lock grabs a logind suspend inhibit lock and will use i3lock to lock the
 # screen before suspend. Use loginctl lock-session to lock your screen.
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+exec --no-startup-id feh --randomize --bg-scale ~/Pictures/bg/*
+exec xrandr --dpi 96
+exec --no-startup-id picom
+exec --no-startup-id nm-applet --sm-disable
+exec --no-startup-id gnome-sound-applet
+exec pulseaudio --start
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 #exec --no-startup-id nm-applet
-exec --no-startup-id nm-applet --sm-disable
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -29,7 +35,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
-bindsym --release F12 exec --no-startup-id scrot -se 'xclip -selection c -t image/png < $f'
+bindsym --release F1 exec --no-startup-id scrot -se 'xclip -selection c -t image/png < $f && rm -fr $f'
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -179,7 +185,7 @@ bindsym $mod+r mode "resize"
 bar {
     status_command i3status
     position top
-    tray_output  primary
+   # tray_output  primary
     colors{
         background #2e3440
         statusline #e5e9f0
