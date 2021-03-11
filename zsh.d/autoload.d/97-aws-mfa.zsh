@@ -52,7 +52,7 @@ function aws-mfa { aws --profile mfa $@ }
 
 function aws-ssh {
   #mfaws ssm describe-instance-information | jq ".InstanceInformationList[] | {.InstanceId "
-  mfaws  ssm start-session --target $@
+  aws-mfa  ssm start-session --target $@
 }
 
 
