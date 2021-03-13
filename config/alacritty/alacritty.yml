@@ -105,5 +105,5 @@ mouse:
       program: open
     modifiers: Command
 mouse_bindings:
-  - { mouse: Left, action: CopySelection }
+  # - { mouse: Left, action: CopySelection }
   - { mouse: Right, action: PasteSelection }
