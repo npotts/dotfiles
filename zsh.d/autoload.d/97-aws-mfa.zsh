@@ -67,7 +67,7 @@ function saw-watch-rzexposure {
   tmux kill-session -t $pipeline || echo "Already dead"
   tmux new-session -d -s ${pipeline}
   tmux new-window -d -t ${pipeline} -n "${rzenv}::Lambda" "saw --profile mfa watch /aws/lambda/rzexposure-${rzenv}"
-  tmux new-window -d -t ${pipeline} -n "${rzenv}::ECS"    "saw --profile mfa watch /ecs/${rzenv}-rzexposure"
+  tmux new-window -d -t ${pipeline} -n "${rzenv}::ECS"    "saw --profile mfa watch rzexposure/${rzenv}"
   tmux attach -t ${pipeline}
 }
 
