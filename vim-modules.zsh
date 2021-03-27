@@ -9,9 +9,9 @@ vimplugs=(
   https://github.com/tpope/vim-fugitive
   https://github.com/isobit/vim-caddyfile
   #1https://github.com/Shougo/deoplete.nvim
-  https://github.com/valloric/youcompleteme
-  https://github.com/scrooloose/nerdcommenter
-  https://github.com/wincent/command-t
+  #https://github.com/valloric/youcompleteme
+  #https://github.com/scrooloose/nerdcommenter
+  #https://github.com/wincent/command-t
   https://github.com/scrooloose/nerdtree
   https://github.com/Xuyuanp/nerdtree-git-plugin
   https://github.com/airblade/vim-gitgutter
