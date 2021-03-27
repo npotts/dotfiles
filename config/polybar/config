@@ -17,8 +17,9 @@ override-redirect = false
 wm-restack = i3
 
 # Top modules
-top-left = workspace title
-top-right = mpd mem paudio vpn wired utc localtime
+top-left = workspace mpd
+top-center = title
+top-right =  cpu mem wired vpn2 paudio utc localtime
 
 systray-top = right
 ; systray-bottom = right
@@ -72,5 +73,6 @@ font-2 = FontAwesome5FreeRegular:pixelsize=14;1
 font-3 = FontAwesome5Brands:pixelsize=10;1
 
 modules-left = ${config.top-left}
+modules-center = ${config.top-center}
 modules-right = ${config.top-right}
 tray-position = ${config.systray-top}

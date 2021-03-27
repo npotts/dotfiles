@@ -9,3 +9,4 @@ docs/tags
 
 #npm cruft
 config/configstore/update-notifier-npm.json
+error.log

@@ -17,16 +17,15 @@ font pango: Noto Sans 14
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id feh --randomize --bg-scale ~/Pictures/bg/*
 exec xrandr --dpi 96
+exec --no-startup-id feh --randomize --bg-scale ~/Pictures/bg/*
 exec --no-startup-id picom
+exec --no-startup-id pulseaudio --start
 exec --no-startup-id nm-applet --sm-disable
+exec --no-startup-id blueman-applet 
 exec --no-startup-id gnome-sound-applet
-exec pulseaudio --start
-
-# NetworkManager is the most popular way to manage wireless networks on Linux,
-# and nm-applet is a desktop environment-independent system tray GUI for it.
-#exec --no-startup-id nm-applet
+exec --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id mpd ~/.mpd.conf
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -151,7 +150,8 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-msg exit"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -180,17 +180,17 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information R
-# finds out, if available)
-bar {
-    status_command i3status
-    position top
-   # tray_output  primary
-    colors{
-        background #2e3440
-        statusline #e5e9f0
-    }
-}
+# # Start i3bar to display a workspace bar (plus the system information R
+# # finds out, if available)
+# bar {
+#     status_command i3status
+#     position top
+#    # tray_output  primary
+#     colors{
+#         background #2e3440
+#         statusline #e5e9f0
+#     }
+# }
 
 #                       border  bkgound   text    indicator  child border                    
 client.focused          #434c5e  #5e81ac  #e5e9f0  #5e81ac      #eceff4
