@@ -4,6 +4,7 @@
 --ignore-dir=.vscode
 --ignore-dir=htmlcov
 --ignore-dir=log
+--ignore-dir=build
 --ignore-dir=node_modules
 --ignore-dir=fixtures
 --ignore-dir=sqlwb
