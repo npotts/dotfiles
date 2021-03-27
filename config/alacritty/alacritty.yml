@@ -11,6 +11,22 @@ scrolling:
   # scrollback is enabled (history > 0).
   multiplier: 3
 font:
+  normal:
+    family: DejaVu Sans Mono
+    # family: Noto Mono
+    style: Regular
+  bold:
+    family: DejaVu Sans Mono
+    # family: Noto Mono
+    style: Bold
+  italic:
+    family: DejaVu Sans Mono
+    # family: Noto Mono
+    style: Italic
+  bold_italic:
+    family: DejaVu Sans Mono
+    # family: Noto Mono
+    style: Bold Italic
   size: 14.0
   use_thin_strokes: true
 draw_bold_text_with_bright_colors: true
