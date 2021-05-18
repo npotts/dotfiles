@@ -17,7 +17,7 @@ override-redirect = false
 wm-restack = i3
 
 # Top modules
-top-left = workspace mpd
+top-left = workspace mpd mfa-aws
 top-center = title
 top-right =  cpu mem wired vpn2 paudio utc localtime
 
