@@ -3,6 +3,15 @@
 function dfs { cd ${DOTFILES}; }
 function dfsup { cd ${DOTFILES}; git pull; git submodule init; git submodule update; }
 
+
+function h {
+  if [[ -z "$1" ]]; then
+    builtin history 0
+    return
+  fi
+  builtin history 0 | grep $@
+}
+
 function gt {
   go test --coverprofile='cover.out' $@
   [ $? -eq 0 ] && go tool cover -html=cover.out -o cover.html

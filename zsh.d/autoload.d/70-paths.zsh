@@ -1,7 +1,7 @@
 
 bindirs=(
-    "/bin/"
-    "/sbin/"
+    "/bin"
+    "/sbin"
     "/usr/local/opt/postgresql@10/bin" #befor /usr/bin for useage on macOS
     "/usr/local/opt/postgresql@11/bin" #befor /usr/bin for useage on macOS
     "${HOME}/Library/Python/3.7/bin" 
@@ -32,8 +32,11 @@ for path in $bindirs; do
     if [ -d "$path" ]; then
         _PATH="${_PATH}:${path}"
     fi
-    
 done
+
+#for optbin in `/bin/find /opt -maxdepth 2 -iname "bin" -type d 2>&1 | /bin/grep -v "Permission denied"`; do
+#  _PATH="${_PATH}:$optbin"
+#done
 
 export PATH="${_PATH}:${PATH}"
 antibody bundle < ~/.antibody-plugins.txt
