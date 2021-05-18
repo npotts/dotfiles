@@ -26,7 +26,7 @@ ncmpcpp_directory = "~/.ncmpcpp"
 #
 ## set it in order to make tag editor and renaming files work properly
 #
-mpd_host = "jerboa"
+mpd_host = "localhost"
 #
 #mpd_port = "6600"
 #
@@ -274,7 +274,7 @@ mpd_host = "jerboa"
 #playlist_separate_albums = "no"
 #
 #playlist_display_mode = "classic" (classic/columns)
-#
+ #
 #browser_display_mode = "classic" (classic/columns)
 #
 #search_engine_display_mode = "classic" (classic/columns)

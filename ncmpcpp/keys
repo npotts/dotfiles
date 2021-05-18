@@ -144,7 +144,7 @@
 #
 #key_add_selected_items = 'A'
 #
-#key_clear = 'c'
+key_clear = 'c'
 #
 #key_crop = 'C'
 #
