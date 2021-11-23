@@ -1,4 +1,6 @@
 export SAM_CLI_TELEMETRY=0
+export AWS_PAGER="" # DONT PAGE YOU MORONIC TOOL
+
 
 function aws-mfa-login {
     set -o pipefail
@@ -47,12 +49,12 @@ function aws-ecr-login {
     aws --profile "$profile" ecr get-login-password | docker login --username AWS --password-stdin $account.dkr.ecr.$region.amazonaws.com
 }
 
-function aws-mfa { aws --profile mfa $@ }
+function aws-mfa { aws --no-cli-pager --profile mfa $@ }
 # function awslocal { aws --endpoint-url=http://localhost:4566 $@ }
 
 function aws-ssh {
   #mfaws ssm describe-instance-information | jq ".InstanceInformationList[] | {.InstanceId "
-  aws-mfa  ssm start-session --target $@
+  aws-mfa ssm start-session --target $@
 }
 
 

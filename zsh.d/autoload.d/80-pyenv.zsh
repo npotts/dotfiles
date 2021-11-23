@@ -20,10 +20,10 @@ bmkinit() {
  }
 
 
-alias pytest="pytest --disable-warnings"
+alias pytest="pytest --disable-warnings --capture=no -p no:logging"
 
 alias pps="poetry shell"
 alias ppr="poetry run"
 
 
-PYTHONDONTWRITEBYTECODE=1
+export PYTHONDONTWRITEBYTECODE=1

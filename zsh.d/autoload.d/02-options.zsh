@@ -9,14 +9,6 @@ setopt auto_cd
 setopt globdots
 
 
-
-autoload -U compinit
-compinit -i
-zstyle ':completion:*:descriptions' format '%U%B%d%b%u'
-zstyle ':completion:*:warnings' format '%B no matches for: %d%b'
-
-
-#enable ss user agent forwarding
 zstyle :omz:plugins:ssh-agent agent-forwarding on
 
 
