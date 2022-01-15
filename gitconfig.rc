@@ -9,6 +9,8 @@
 	insteadOf = http://github.com/
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[url "git@git.home.arpa:"]
+	insteadOf = https://git.home.arpa.com:3000/
 [apply]
   whitespace = warn
 [help]
