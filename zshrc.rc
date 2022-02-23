@@ -19,3 +19,5 @@ antibody bundle < ${HOME}/.antibody-plugins.txt
 for i in ~/.zsh.d/autoload.d/*.zsh; do
 	. $i
 done
+
+export PATH="$HOME/.poetry/bin:$PATH"

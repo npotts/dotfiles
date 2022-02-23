@@ -1,10 +1,12 @@
 export SAM_CLI_TELEMETRY=0
+export AWS_PAGER="" # DONT PAGE YOU MORONIC TOOL
+
 
 function aws-mfa-login {
     set -o pipefail
     profile=${1:-mfa}
     mfa_arn="$(aws iam list-mfa-devices | jq -r ".MFADevices[0].SerialNumber")"
-    token="$(ykman oath code AWS -s)"
+    token="$(ykman oath accounts code AWS -s)"
     if [[ $? -ne 0 ]]; then
       echo "Using MFA with ARN: '${mfa_arn}'"
       echo -n "MFA Code from Device: "
@@ -47,12 +49,12 @@ function aws-ecr-login {
     aws --profile "$profile" ecr get-login-password | docker login --username AWS --password-stdin $account.dkr.ecr.$region.amazonaws.com
 }
 
-function aws-mfa { aws --profile mfa $@ }
+function aws-mfa { aws --no-paginate --profile mfa $@ }
 # function awslocal { aws --endpoint-url=http://localhost:4566 $@ }
 
 function aws-ssh {
   #mfaws ssm describe-instance-information | jq ".InstanceInformationList[] | {.InstanceId "
-  aws-mfa  ssm start-session --target $@
+  aws-mfa ssm start-session --target $@
 }
 
 

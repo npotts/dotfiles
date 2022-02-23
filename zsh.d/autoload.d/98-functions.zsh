@@ -79,7 +79,8 @@ function http_here {
     echo "Usage: httpd_here <tcp-listen-port>"
     return;
   fi
-  python -m SimpleHTTPServer $1
+  #python -m SimpleHTTPServer $1
+  python3 -m http.server $1
 }
 
 

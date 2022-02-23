@@ -17,15 +17,16 @@ font pango: Noto Sans 14
 # screen before suspend. Use loginctl lock-session to lock your screen.
 #exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id "xrandr --output VGA-0 --off --output DVI-D-0 --mode 1600x1200 --pos 3840x960 --rotate normal --output HDMI-0 --primary --mode 3840x2160 --pos 0x0 --rotate normal"
+#exec --no-startuip-id "xrandr --output VGA-0 --off --output DP-5 --mode 1600x1200 --pos 3840x960 --rotate normal --output DP-4 --primary --mode 3840x2160 --pos 0x0 --rotate normal"
+exec --no-startup-id "xrandr --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --off --output DP-4 --mode 3840x2160 --pos 3840x0 --rotate normal --output DP-5 --primary --mode 3840x2160 --pos 0x0 --rotate normal --output DP-6 --off --output DP-7 --off"
 exec --no-startup-id "xrandr --dpi 96"
 exec --no-startup-id "feh --randomize --bg-scale ~/Pictures/bg/*"
-exec --no-startup-id "picom"
-exec --no-startup-id "pulseaudio --start &"
+exec --no-startup-id "picom" #composting manager
+exec --no-startup-id "pulseaudio --start"
 exec --no-startup-id "nm-applet --sm-disable"
 exec --no-startup-id "blueman-applet"
 exec --no-startup-id "gnome-sound-applet"
-exec --no-startup-id "$HOME/.config/polybar/launch.sh"
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 exec --no-startup-id "sleep 10 && mpd ~/.mpd.conf"
 
 # Use pactl to adjust volume in PulseAudio.
@@ -40,6 +41,7 @@ bindsym XF86AudioPrev exec --no-startup-id mpc --host localhost prev
 bindsym XF86AudioPlay exec --no-startup-id mpc --host localhost toggle 
 
 bindsym --release F1 exec --no-startup-id scrot -se 'xclip -selection c -t image/png < $f && rm -fr $f'
+bindsym --release F2 exec --no-startup-id xkill
 
 
 # Use Mouse+$mod to drag floating windows to their wanted position
@@ -118,7 +120,7 @@ bindsym $mod+a focus parent
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-#set $ws1 "1: comm" output HDMI-0 DVI-D-0
+#set $ws1 "1: comm" output DP-5 DP-5
 set $ws1 "1: comm"
 set $ws2 "2"
 set $ws3 "3"
@@ -130,16 +132,16 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10: zoom"
 
-workspace $ws1 output HDMI-0
-workspace $ws2 output HDMI-0
-workspace $ws3 output HDMI-0
-workspace $ws4 output HDMI-0
-workspace $ws5 output HDMI-0
-workspace $ws6 output DVI-D-0
-workspace $ws7 output DVI-D-0
-workspace $ws8 output DVI-D-0
-workspace $ws9 output DVI-D-0
-workspace $ws10 output DVI-D-0
+workspace $ws1 output DP-5
+workspace $ws2 output DP-4
+workspace $ws3 output DP-5
+workspace $ws4 output DP-4
+workspace $ws5 output DP-5
+workspace $ws6 output DP-4
+workspace $ws7 output DP-5
+workspace $ws8 output DP-4
+workspace $ws9 output DP-5
+workspace $ws10 output DP-4
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -232,3 +234,7 @@ assign [class="slack"] → $ws1
 assign [class="zoom"] → $ws10
 # and...  no floating windows
 for_window [class="zoom"] floating disable
+no_focus [ class=all ]
+# DONT MOVE FOCUS FOR ANY REASON
+
+
