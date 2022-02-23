@@ -24,6 +24,8 @@ bindirs=(
     "/opt/bin"
     "/opt/flyway-6.1.0"
     "/snap/bin"
+    "/opt/local/bin"
+    "/opt/local/sbin"
 )
 
 
